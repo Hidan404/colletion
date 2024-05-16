@@ -27,7 +27,7 @@ public class ListaTarefas {
 
     public void obterDescricoesTarefas(){
         for (Tarefa tarefa : yodo) {
-            System.out.println("A tarefa e: " + tarefa);
+            System.out.println("A tarefa: " + tarefa);
         }
     }
 }
