@@ -18,16 +18,39 @@ public class ListaTarefas {
     }
 
     public void removerTarefa(String descricao){
-        yodo.remove(0);
+        List<Tarefa> tarefasParaRemover = new ArrayList<>();
+       for (Tarefa tarefa : yodo) {
+            if(tarefa.getDescricao().trim().equalsIgnoreCase(descricao)){
+                tarefasParaRemover.add(tarefa);
+            }
+       }
+       yodo.removeAll(tarefasParaRemover);
     }
+
 
     public int obterNumeroTarefas(){
         return yodo.size();
     }
 
     public void obterDescricoesTarefas(){
-        for (Tarefa tarefa : yodo) {
-            System.out.println("A tarefa: " + tarefa);
-        }
+       if(!yodo.isEmpty()){
+            System.out.println(yodo);
+       }
+       else{
+            System.out.println("A lista esta vazia");
+       }
     }
+
+
+
+    @Override
+    public String toString() {
+        return "ListaTarefas: " + yodo;
+    }
+
+
+
+   
+
+    
 }
